@@ -202,6 +202,27 @@ nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
   background:radial-gradient(circle at 48% 44%,transparent 24%,rgba(11,13,13,.5) 40%,rgba(11,13,13,.9) 54%,var(--carbon) 62%);
 }
 .piece--fondo .ham-float:hover ~ .plate-reveal{opacity:1;transform:scale(1.06)}
+
+/* variante en espejo: la pieza a la izquierda y el texto a la derecha */
+.piece--espejo{background:var(--carbon-2);border-top:1px solid var(--line-dark)}
+.piece--espejo .piece-copy{margin-left:auto}
+.piece--espejo .piece-copy{padding:7.5rem 0}
+.piece--espejo .ham-float{
+  left:3%;right:auto;top:50%;
+  width:auto;max-width:none;height:118%;
+  transform:translateY(-50%);
+  filter:brightness(1.22) contrast(1.04);
+}
+.piece--espejo .ham-float:hover{filter:brightness(1.32) contrast(1.04)}
+.piece--espejo .plate-reveal{
+  right:auto;left:-4%;transform-origin:28% 72%;
+}
+.piece--espejo .scrim{
+  background:linear-gradient(270deg,rgba(11,13,13,.92) 0%,rgba(11,13,13,.8) 28%,rgba(11,13,13,.3) 44%,rgba(11,13,13,0) 56%);
+}
+.piece--espejo .veil{
+  background:radial-gradient(ellipse 80% 90% at 32% 50%,rgba(232,197,102,.05) 0%,transparent 70%);
+}
 .piece--fondo .scrim{
   position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(90deg,rgba(11,13,13,.92) 0%,rgba(11,13,13,.8) 28%,rgba(11,13,13,.3) 44%,rgba(11,13,13,0) 56%);
@@ -279,8 +300,9 @@ footer a:hover{color:var(--gold);border-bottom-color:var(--gold-deep)}
   .piece .u{grid-template-columns:1fr;gap:2.2rem}
   .piece--paleta .u{direction:ltr}
   .piece--fondo{padding-bottom:3rem}
-  .piece--fondo .ham-float{width:118%;left:-9%;top:auto;bottom:-4%;transform:none;opacity:.65}
+  .piece--fondo .ham-float{width:118%;left:-9%;right:auto;top:auto;bottom:-4%;transform:none;opacity:.65}
   .piece--fondo .plate-reveal{display:none}
+  .piece--espejo .piece-copy{margin-left:0}
   .piece--fondo .scrim{background:linear-gradient(180deg,rgba(11,13,13,.35) 0%,rgba(11,13,13,.82) 42%,rgba(11,13,13,.9) 100%)}
   .piece--fondo .piece-copy{max-width:none;padding:3rem 0 9rem}
   .figures-grid{grid-template-columns:1fr}

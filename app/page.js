@@ -164,22 +164,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="piece piece--paleta dark" id="paleta">
+      <section className="piece piece--fondo piece--espejo dark" id="paleta">
+        <img className="ham-float" src="/img/paleta.jpg" alt="Paleta Premium Belluta" />
+        <div
+          className="plate-reveal"
+          style={{ backgroundImage: "url('/img/paleta-plato.jpg')" }}
+          role="img"
+          aria-label="Plato de paleta Belluta recién cortada"
+        />
+        <div className="veil" />
+        <div className="scrim" />
         <div className="u">
-          <div className="piece-media">
-            <div>
-              <div className="whole">
-                <img src="/img/paleta.jpg" alt="Paleta Premium Belluta" />
-              </div>
-            </div>
-            <div>
-              <div className="plate">
-                <img src="/img/paleta-plato.jpg" alt="Lonchas de paleta Belluta en primer plano" />
-              </div>
-              <p className="plate-cap">Plato de corte</p>
-            </div>
-          </div>
-
           <div className="piece-copy">
             <p className="meta">5,3 kg aprox · mínimo 12 meses</p>
             <h2>Paleta Premium</h2>
