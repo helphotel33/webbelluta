@@ -169,6 +169,40 @@ nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
 .campaign{color:var(--muted-dark);font-size:.82rem;font-style:italic;margin-left:auto}
 .piece-copy .wa-btn{align-self:flex-start}
 
+/* ---------- pieza con foto de fondo (jamón) ---------- */
+.piece--fondo{
+  padding:0;
+  position:relative;overflow:hidden;isolation:isolate;
+  background:var(--carbon);
+}
+.piece--fondo .u{display:block;position:relative;z-index:3}
+.piece--fondo .plate-bg{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;background-position:28% 72%;
+}
+.piece--fondo .ham-float{
+  position:absolute;z-index:2;pointer-events:none;
+  mix-blend-mode:lighten;
+  left:16%;top:54%;width:60%;transform:translateY(-50%) rotate(-3deg);
+  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 52% 50%,#000 52%,transparent 86%);
+  mask-image:radial-gradient(ellipse 72% 70% at 52% 50%,#000 52%,transparent 86%);
+}
+.piece--fondo .scrim{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(90deg,rgba(11,13,13,.94) 0%,rgba(11,13,13,.88) 30%,rgba(11,13,13,.45) 47%,rgba(11,13,13,0) 60%);
+}
+.piece--fondo .veil{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(95deg,rgba(11,13,13,.97) 18%,rgba(11,13,13,.82) 42%,rgba(11,13,13,.45) 68%,rgba(11,13,13,.18) 100%);
+}
+.piece--fondo .piece-copy{max-width:30rem;padding:6.5rem 0}
+.piece--fondo .piece-copy h2{text-shadow:0 2px 24px rgba(0,0,0,.85)}
+.piece--fondo .piece-copy p,
+.piece--fondo .piece-copy li{text-shadow:0 1px 14px rgba(0,0,0,.9)}
+.piece--fondo .price-row{border-top-color:rgba(232,197,102,.3)}
+.piece--fondo .price{text-shadow:0 2px 20px rgba(0,0,0,.9)}
+.piece--fondo .campaign{margin-left:0}
+
 /* ---------- la casa ---------- */
 .house{background:var(--cream);padding:5.5rem 0}
 .house-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:3.5rem;align-items:start}
@@ -229,6 +263,10 @@ footer a:hover{color:var(--gold);border-bottom-color:var(--gold-deep)}
   .grid3,.ship-grid,.house-grid,.foot-grid{grid-template-columns:1fr}
   .piece .u{grid-template-columns:1fr;gap:2.2rem}
   .piece--paleta .u{direction:ltr}
+  .piece--fondo .ham-float{width:150%;left:-25%;top:12%;transform:none;opacity:.55}
+  .piece--fondo .scrim{background:linear-gradient(180deg,rgba(11,13,13,.55) 0%,rgba(11,13,13,.9) 40%,rgba(11,13,13,.95) 100%)}
+  .piece--fondo .veil{background:linear-gradient(180deg,rgba(11,13,13,.7) 0%,rgba(11,13,13,.93) 46%,rgba(11,13,13,.97) 100%)}
+  .piece--fondo .piece-copy{max-width:none;padding:3rem 0 3.5rem}
   .figures-grid{grid-template-columns:1fr}
   .fig{border-right:0;border-bottom:1px solid var(--line-dark);padding:2rem 0 2.2rem}
   .fig:last-child{border-bottom:0}

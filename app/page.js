@@ -130,22 +130,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="piece piece--jamon dark" id="jamon">
+      <section className="piece piece--fondo dark" id="jamon">
+        <div
+          className="plate-bg"
+          style={{ backgroundImage: "url('/img/jamon-plato.jpg')" }}
+          role="img"
+          aria-label="Plato de jamón Belluta recién cortado"
+        />
+        <img className="ham-float" src="/img/jamon.jpg" alt="Jamón Premium Belluta en su jamonero" />
+        <div className="veil" />
+        <div className="scrim" />
         <div className="u">
-          <div className="piece-media">
-            <div>
-              <div className="whole">
-                <img src="/img/jamon.jpg" alt="Jamón Premium Belluta con su vitola" />
-              </div>
-            </div>
-            <div>
-              <div className="plate">
-                <img src="/img/jamon-plato.jpg" alt="Plato de jamón Belluta recién cortado" />
-              </div>
-              <p className="plate-cap">Plato de corte</p>
-            </div>
-          </div>
-
           <div className="piece-copy">
             <p className="meta">7,5 kg aprox · mínimo 24 meses</p>
             <h2>Jamón Premium</h2>
