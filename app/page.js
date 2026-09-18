@@ -112,7 +112,7 @@ export default function Home() {
             <div className="fig-ic"><IconReloj /></div>
             <span className="n">24</span>
             <p className="t">meses mínimo de curación</p>
-            <p className="d">Nuestros jamones no salen de bodega antes. Las paletas, 18.</p>
+            <p className="d">Nuestros jamones no salen de bodega antes. Las paletas, 12.</p>
           </div>
           <div className="fig">
             <div className="fig-ic"><IconMedalla /></div>
@@ -186,12 +186,12 @@ export default function Home() {
           </div>
 
           <div className="piece-copy">
-            <p className="meta">5,3 kg aprox · mínimo 18 meses</p>
+            <p className="meta">5,3 kg aprox · mínimo 12 meses</p>
             <h2>Paleta Premium</h2>
             <p>
-              El mismo cuidado en una pieza más manejable. Dieciocho meses mínimo de bodega: menos
-              peso, más intensidad. La paleta concentra el sabor, y por eso es la que más gusta a
-              quien corta a diario en casa.
+              El mismo cuidado en una pieza más manejable. Doce meses mínimo de bodega: menos peso,
+              más intensidad. La paleta concentra el sabor, y por eso es la que más gusta a quien
+              corta a diario en casa.
             </p>
             <ul>
               <li>La puerta de entrada a Belluta, con la misma vitola</li>
