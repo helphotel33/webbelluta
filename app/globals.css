@@ -176,24 +176,31 @@ nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
   background:var(--carbon);
 }
 .piece--fondo .u{display:block;position:relative;z-index:3}
+/* el plato, pequeño y sangrando por la esquina inferior derecha */
 .piece--fondo .plate-bg{
-  position:absolute;inset:0;z-index:0;
-  background-size:cover;background-position:28% 72%;
+  position:absolute;z-index:1;
+  right:-5%;bottom:-13%;width:33%;aspect-ratio:1/1;
+  background-size:cover;background-position:38% 78%;
 }
+.piece--fondo .plate-bg::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 48% 44%,transparent 24%,rgba(11,13,13,.5) 40%,rgba(11,13,13,.9) 54%,var(--carbon) 62%);
+}
+/* la pieza entera, protagonista, fundida con el negro */
 .piece--fondo .ham-float{
   position:absolute;z-index:2;pointer-events:none;
   mix-blend-mode:lighten;
-  left:16%;top:54%;width:60%;transform:translateY(-50%) rotate(-3deg);
-  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 52% 50%,#000 52%,transparent 86%);
-  mask-image:radial-gradient(ellipse 72% 70% at 52% 50%,#000 52%,transparent 86%);
+  left:38%;top:50%;width:62%;transform:translateY(-50%) rotate(-3deg);
+  -webkit-mask-image:radial-gradient(ellipse 70% 68% at 50% 50%,#000 54%,transparent 88%);
+  mask-image:radial-gradient(ellipse 70% 68% at 50% 50%,#000 54%,transparent 88%);
 }
 .piece--fondo .scrim{
   position:absolute;inset:0;z-index:2;
-  background:linear-gradient(90deg,rgba(11,13,13,.94) 0%,rgba(11,13,13,.88) 30%,rgba(11,13,13,.45) 47%,rgba(11,13,13,0) 60%);
+  background:linear-gradient(90deg,rgba(11,13,13,.92) 0%,rgba(11,13,13,.8) 28%,rgba(11,13,13,.3) 44%,rgba(11,13,13,0) 56%);
 }
 .piece--fondo .veil{
-  position:absolute;inset:0;z-index:1;
-  background:linear-gradient(95deg,rgba(11,13,13,.97) 18%,rgba(11,13,13,.82) 42%,rgba(11,13,13,.45) 68%,rgba(11,13,13,.18) 100%);
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 80% 90% at 68% 50%,rgba(232,197,102,.05) 0%,transparent 70%);
 }
 .piece--fondo .piece-copy{max-width:30rem;padding:6.5rem 0}
 .piece--fondo .piece-copy h2{text-shadow:0 2px 24px rgba(0,0,0,.85)}
@@ -263,10 +270,11 @@ footer a:hover{color:var(--gold);border-bottom-color:var(--gold-deep)}
   .grid3,.ship-grid,.house-grid,.foot-grid{grid-template-columns:1fr}
   .piece .u{grid-template-columns:1fr;gap:2.2rem}
   .piece--paleta .u{direction:ltr}
-  .piece--fondo .ham-float{width:150%;left:-25%;top:12%;transform:none;opacity:.55}
-  .piece--fondo .scrim{background:linear-gradient(180deg,rgba(11,13,13,.55) 0%,rgba(11,13,13,.9) 40%,rgba(11,13,13,.95) 100%)}
-  .piece--fondo .veil{background:linear-gradient(180deg,rgba(11,13,13,.7) 0%,rgba(11,13,13,.93) 46%,rgba(11,13,13,.97) 100%)}
-  .piece--fondo .piece-copy{max-width:none;padding:3rem 0 3.5rem}
+  .piece--fondo{padding-bottom:3rem}
+  .piece--fondo .ham-float{width:118%;left:-9%;top:auto;bottom:-4%;transform:none;opacity:.65}
+  .piece--fondo .plate-bg{width:46%;right:-8%;bottom:-8%}
+  .piece--fondo .scrim{background:linear-gradient(180deg,rgba(11,13,13,.35) 0%,rgba(11,13,13,.82) 42%,rgba(11,13,13,.9) 100%)}
+  .piece--fondo .piece-copy{max-width:none;padding:3rem 0 9rem}
   .figures-grid{grid-template-columns:1fr}
   .fig{border-right:0;border-bottom:1px solid var(--line-dark);padding:2rem 0 2.2rem}
   .fig:last-child{border-bottom:0}
