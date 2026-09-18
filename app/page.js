@@ -6,6 +6,59 @@ const WA_JAMON = wa('Hola, me interesa el Jamón Premium Belluta (190 €).');
 const WA_PALETA = wa('Hola, me interesa la Paleta Premium Belluta (115 €).');
 const WA_GENERAL = wa('Hola, quiero información sobre los jamones Belluta.');
 
+/* --- Iconos dorados de la banda de cifras (SVG propio, sin librerías) --- */
+
+const svgProps = {
+  viewBox: '0 0 48 48',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 1.4,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+  'aria-hidden': 'true',
+};
+
+function IconReloj() {
+  return (
+    <svg {...svgProps} className="ic-clock">
+      <circle cx="24" cy="24" r="17.5" />
+      <circle cx="24" cy="24" r="21" strokeOpacity="0.3" />
+      <path d="M24 8.5v2.6M39.5 24h-2.6M24 39.5v-2.6M8.5 24h2.6" />
+      <path className="hand-h" d="M24 24v-8.5" />
+      <path className="hand-m" d="M24 24h7.5" />
+      <circle cx="24" cy="24" r="1.3" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconMedalla() {
+  return (
+    <svg {...svgProps} className="ic-medal">
+      <g>
+        <path d="M16.5 27.5 11 41l7.2-3.6L24 40l5.8-2.6L37 41l-5.5-13.5" />
+        <circle cx="24" cy="18" r="11.5" />
+        <circle cx="24" cy="18" r="6.5" strokeOpacity="0.45" />
+        <path d="M24 14.2v7.6M20.2 18h7.6" strokeOpacity="0.45" />
+      </g>
+    </svg>
+  );
+}
+
+function IconFamilia() {
+  return (
+    <svg {...svgProps} className="ic-family">
+      <g>
+        <circle cx="12.5" cy="17.5" r="4.3" />
+        <path d="M5.5 33.5c0-4 3.2-7 7-7s7 3 7 7" />
+        <circle cx="26.5" cy="14.5" r="5" />
+        <path d="M18.5 33.5c0-4.6 3.6-8 8-8s8 3.4 8 8" />
+        <circle cx="39" cy="21.5" r="3.4" />
+        <path d="M33.5 33.5c0-3.2 2.5-5.6 5.5-5.6s5.5 2.4 5.5 5.6" />
+      </g>
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -50,18 +103,26 @@ export default function Home() {
       </header>
 
       <section className="figures dark">
-        <div className="u">
+        <div className="u figures-lead">
+          <p className="eyebrow">La casa, en tres cifras</p>
+          <p>Lo que no se ve en la foto: el tiempo que espera cada pieza y las pocas que salen al año.</p>
+        </div>
+        <div className="u figures-grid">
           <div className="fig">
+            <div className="fig-ic"><IconReloj /></div>
             <span className="n">24</span>
             <p className="t">meses mínimo de curación</p>
             <p className="d">Nuestros jamones no salen de bodega antes. Las paletas, 18.</p>
           </div>
           <div className="fig">
+            <div className="fig-ic"><IconMedalla /></div>
+            <span className="fig-badge">Edición limitada</span>
             <span className="n">1.000</span>
-            <p className="t">piezas al año como máximo</p>
+            <p className="t">piezas al año, ni una más</p>
             <p className="d">Se puede producir mucho más. Preferimos poder cuidarlas.</p>
           </div>
           <div className="fig">
+            <div className="fig-ic"><IconFamilia /></div>
             <span className="n">3</span>
             <p className="t">generaciones en el oficio</p>
             <p className="d">Jamones Pastor Sánchez · De Jabugo La Cañada · Belluta.</p>

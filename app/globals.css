@@ -78,13 +78,65 @@ nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
 .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.6rem}
 
 /* ---------- cifras ---------- */
-.figures{background:var(--carbon-2);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
-.figures .u{display:grid;grid-template-columns:repeat(3,1fr)}
-.fig{padding:2.1rem 1.6rem 2.1rem 0;border-right:1px solid var(--line-dark)}
-.fig:last-child{border-right:0;padding-right:0}
-.fig .n{font-family:Cinzel,serif;font-size:2.5rem;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;display:block;margin-bottom:.45rem}
-.fig .t{color:var(--cream);font-size:1rem;margin-bottom:.2rem}
-.fig .d{color:var(--muted-dark);font-size:.9rem}
+.figures{
+  background:var(--carbon-2);
+  border-bottom:1px solid var(--line-dark);
+  padding:1.2rem 0 3.2rem;
+  position:relative;
+}
+.figures::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-deep) 22%,var(--gold) 50%,var(--gold-deep) 78%,transparent);
+}
+.figures-lead{text-align:center;padding:2.2rem 0 2.6rem}
+.figures-lead .eyebrow{display:block;width:100%;margin-bottom:.6rem}
+.figures-lead p{color:var(--muted-dark);font-size:1rem;max-width:34rem;margin:0 auto}
+
+.figures-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.fig{
+  position:relative;
+  padding:1.8rem 1.8rem 2rem;
+  border-right:1px solid var(--line-dark);
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:.1rem;
+  transition:transform .45s cubic-bezier(.22,1,.36,1),background-color .45s ease;
+}
+.fig:last-child{border-right:0}
+.fig::after{
+  content:'';position:absolute;left:50%;right:50%;bottom:0;height:2px;
+  background:var(--gold);transition:left .45s ease,right .45s ease;
+}
+.fig:hover{transform:translateY(-8px);background-color:rgba(232,197,102,.045)}
+.fig:hover::after{left:18%;right:18%}
+
+.fig-ic{color:var(--gold-deep);margin-bottom:1rem;transition:color .45s ease}
+.fig-ic svg{width:62px;height:62px;display:block}
+.fig:hover .fig-ic{color:var(--gold)}
+
+.fig .n{
+  font-family:Cinzel,serif;font-size:2.9rem;line-height:1;color:var(--gold);
+  font-variant-numeric:tabular-nums;display:block;margin-bottom:.5rem;
+  transition:text-shadow .45s ease;
+}
+.fig:hover .n{text-shadow:0 0 26px rgba(232,197,102,.45)}
+.fig .t{color:var(--cream);font-size:1.02rem;margin-bottom:.35rem}
+.fig .d{color:var(--muted-dark);font-size:.9rem;max-width:20rem}
+
+.fig-badge{
+  display:inline-block;margin-bottom:.7rem;
+  font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold-deep);padding:.2rem .7rem;
+  transition:background-color .45s ease,color .45s ease;
+}
+.fig:hover .fig-badge{background-color:var(--gold);color:var(--carbon)}
+
+/* movimiento de los iconos */
+.ic-clock .hand-m,.ic-clock .hand-h{transform-origin:24px 24px;transition:transform 1.3s cubic-bezier(.34,.1,.2,1)}
+.fig:hover .ic-clock .hand-m{transform:rotate(360deg)}
+.fig:hover .ic-clock .hand-h{transform:rotate(30deg)}
+.ic-medal>g{transform-origin:24px 24px;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.fig:hover .ic-medal>g{transform:scale(1.09) rotate(-5deg)}
+.ic-family>g{transform-origin:24px 26px;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.fig:hover .ic-family>g{transform:scale(1.08)}
 
 /* ---------- piezas ---------- */
 .piece{padding:5.5rem 0}
@@ -177,9 +229,10 @@ footer a:hover{color:var(--gold);border-bottom-color:var(--gold-deep)}
   .grid3,.ship-grid,.house-grid,.foot-grid{grid-template-columns:1fr}
   .piece .u{grid-template-columns:1fr;gap:2.2rem}
   .piece--paleta .u{direction:ltr}
-  .figures .u{grid-template-columns:1fr}
-  .fig{border-right:0;border-bottom:1px solid var(--line-dark);padding:1.5rem 0}
+  .figures-grid{grid-template-columns:1fr}
+  .fig{border-right:0;border-bottom:1px solid var(--line-dark);padding:2rem 0 2.2rem}
   .fig:last-child{border-bottom:0}
+  .figures-lead{padding:1.6rem 0 1.8rem}
   nav,.top-right .wa-btn{display:none}
   .sticky{display:flex}
   footer{padding-bottom:6.5rem}
