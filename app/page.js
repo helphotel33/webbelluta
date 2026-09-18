@@ -131,13 +131,13 @@ export default function Home() {
       </section>
 
       <section className="piece piece--fondo dark" id="jamon">
+        <img className="ham-float" src="/img/jamon.jpg" alt="Jamón Premium Belluta en su jamonero" />
         <div
-          className="plate-bg"
+          className="plate-reveal"
           style={{ backgroundImage: "url('/img/jamon-plato.jpg')" }}
           role="img"
           aria-label="Plato de jamón Belluta recién cortado"
         />
-        <img className="ham-float" src="/img/jamon.jpg" alt="Jamón Premium Belluta en su jamonero" />
         <div className="veil" />
         <div className="scrim" />
         <div className="u">

@@ -175,31 +175,39 @@ nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
   position:relative;overflow:hidden;isolation:isolate;
   background:var(--carbon);
 }
-.piece--fondo .u{display:block;position:relative;z-index:3}
-/* el plato, pequeño y sangrando por la esquina inferior derecha */
-.piece--fondo .plate-bg{
-  position:absolute;z-index:1;
-  right:-5%;bottom:-13%;width:33%;aspect-ratio:1/1;
-  background-size:cover;background-position:38% 78%;
-}
-.piece--fondo .plate-bg::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at 48% 44%,transparent 24%,rgba(11,13,13,.5) 40%,rgba(11,13,13,.9) 54%,var(--carbon) 62%);
-}
+.piece--fondo .u{display:block;position:relative;z-index:3;pointer-events:none}
+.piece--fondo .piece-copy{pointer-events:auto}
 /* la pieza entera, protagonista, fundida con el negro */
 .piece--fondo .ham-float{
-  position:absolute;z-index:2;pointer-events:none;
+  position:absolute;z-index:2;cursor:pointer;
   mix-blend-mode:lighten;
   left:38%;top:50%;width:62%;transform:translateY(-50%) rotate(-3deg);
   -webkit-mask-image:radial-gradient(ellipse 70% 68% at 50% 50%,#000 54%,transparent 88%);
   mask-image:radial-gradient(ellipse 70% 68% at 50% 50%,#000 54%,transparent 88%);
+  transition:filter .5s ease;
 }
+.piece--fondo .ham-float:hover{filter:brightness(1.08)}
+
+/* el plato, oculto; aparece y crece al pasar el puntero por la pieza */
+.piece--fondo .plate-reveal{
+  position:absolute;z-index:1;
+  right:-4%;bottom:-12%;width:36%;aspect-ratio:1/1;
+  background-size:cover;background-position:38% 78%;
+  opacity:0;transform:scale(.8);transform-origin:72% 72%;
+  transition:opacity .5s ease,transform .8s cubic-bezier(.22,1,.36,1);
+  pointer-events:none;
+}
+.piece--fondo .plate-reveal::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 48% 44%,transparent 24%,rgba(11,13,13,.5) 40%,rgba(11,13,13,.9) 54%,var(--carbon) 62%);
+}
+.piece--fondo .ham-float:hover ~ .plate-reveal{opacity:1;transform:scale(1.06)}
 .piece--fondo .scrim{
-  position:absolute;inset:0;z-index:2;
+  position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(90deg,rgba(11,13,13,.92) 0%,rgba(11,13,13,.8) 28%,rgba(11,13,13,.3) 44%,rgba(11,13,13,0) 56%);
 }
 .piece--fondo .veil{
-  position:absolute;inset:0;z-index:0;
+  position:absolute;inset:0;z-index:0;pointer-events:none;
   background:radial-gradient(ellipse 80% 90% at 68% 50%,rgba(232,197,102,.05) 0%,transparent 70%);
 }
 .piece--fondo .piece-copy{max-width:30rem;padding:6.5rem 0}
@@ -272,7 +280,7 @@ footer a:hover{color:var(--gold);border-bottom-color:var(--gold-deep)}
   .piece--paleta .u{direction:ltr}
   .piece--fondo{padding-bottom:3rem}
   .piece--fondo .ham-float{width:118%;left:-9%;top:auto;bottom:-4%;transform:none;opacity:.65}
-  .piece--fondo .plate-bg{width:46%;right:-8%;bottom:-8%}
+  .piece--fondo .plate-reveal{display:none}
   .piece--fondo .scrim{background:linear-gradient(180deg,rgba(11,13,13,.35) 0%,rgba(11,13,13,.82) 42%,rgba(11,13,13,.9) 100%)}
   .piece--fondo .piece-copy{max-width:none;padding:3rem 0 9rem}
   .figures-grid{grid-template-columns:1fr}
