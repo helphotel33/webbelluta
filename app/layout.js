@@ -13,7 +13,7 @@ export const metadata = {
     siteName: 'Belluta',
     locale: 'es_ES',
     type: 'website',
-    images: ['/img/hero.jpg'],
+    images: ['/img/jamon.jpg'],
   },
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@200;300;400;500&display=swap"
         />
       </head>
       <body>{children}</body>
