@@ -5,6 +5,27 @@ const WA_JAMON = wa('Hola, me interesa el Jamón Premium Belluta (190 €).');
 const WA_PALETA = wa('Hola, me interesa la Paleta Premium Belluta (115 €).');
 const WA_GENERAL = wa('Hola, quiero información sobre los jamones Belluta.');
 
+const GOOGLE_PERFIL = 'https://share.google/qW1aiP8bbA9d6ace9';
+
+/* Reseñas reales de la ficha de Google, copiadas tal cual. */
+const RESENAS = [
+  {
+    autor: 'Susana AH',
+    texto:
+      'De los mejores jamones que hemos probado. Excelente calidad en sus productos. La atención de Chicho fue inmejorable. Totalmente recomendable. Repetiremos sin duda.',
+  },
+  {
+    autor: 'Jose M Aguirre',
+    texto:
+      'Máxima calidad y servicio esmerado a precio muy competitivo. Totalmente recomendable.',
+  },
+  {
+    autor: 'Cristina León',
+    texto:
+      'Excelente calidad, productos de primera a un precio inmejorable. Trato espléndido.',
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -159,6 +180,7 @@ export default function Home() {
         <div className="u">
           <div className="center">
             <img className="orn on-light" src="/img/ornamento.png" alt="" />
+            <p className="dicen-nota">5,0 sobre 5 · 21 opiniones en Google</p>
           </div>
           <div className="dicen-grid">
             <div className="dicen-title">
@@ -166,19 +188,16 @@ export default function Home() {
               <br />
               de nosotros
             </div>
-            {[0, 1, 2].map((i) => (
-              <div className="resena" key={i}>
+            {RESENAS.map((r) => (
+              <blockquote className="resena" key={r.autor}>
                 <div className="stars">★★★★★</div>
-                <div className="ph" />
-                <div className="ph" />
-                <div className="ph s" />
-                <div className="who">Reseña real de Google</div>
-              </div>
+                <p>{r.texto}</p>
+                <cite className="who">{r.autor}</cite>
+              </blockquote>
             ))}
           </div>
-          <p className="nota">
-            Pendiente: aquí entran las reseñas de 4 y 5 estrellas de la ficha de Google, con su
-            nombre y su texto reales.
+          <p className="center" style={{ marginTop: '2.4rem' }}>
+            <a className="btn btn--light" href={GOOGLE_PERFIL}>Ver todas en Google</a>
           </p>
         </div>
       </section>
