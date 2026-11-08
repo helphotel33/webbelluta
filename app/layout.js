@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://belluta.es'),
+  metadataBase: new URL('https://www.belluta.es'),
   title: 'Belluta · Jamón y Paleta Premium de la Sierra de Huelva',
   description:
     'Jamones de 24 meses y paletas de 12, nunca más de 1.000 piezas al año. Precio directo y envío a toda la península. Tradición desde 1951.',
@@ -9,7 +9,7 @@ export const metadata = {
     title: 'Belluta · Jamón y Paleta Premium',
     description:
       'Jamones y paletas cuidados sin prisa en la Sierra de Huelva. Tradición desde 1951.',
-    url: 'https://belluta.es',
+    url: 'https://www.belluta.es',
     siteName: 'Belluta',
     locale: 'es_ES',
     type: 'website',
